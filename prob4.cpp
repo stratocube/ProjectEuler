@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
 #include <sstream>
 
 using namespace std;
@@ -10,30 +10,31 @@ bool isPalindrome (int num) {
 	ss << num;
 	string s = ss.str();
 
-	int i = 0, l = s.length();
-	while (i < l/2) {
-		if (s[i] != s[l-i-1])
-			return false;
-		i++;
-	}
-
-	return true;
+	return equal(s.begin(), s.begin() + s.size()/2, s.rbegin());
 }
 
 int main(void) {
 	const int MAX = 999;
-	int a = MAX, b = MAX, max = 0;
+	int largest = 0, a, b, db;
 	
-	for (b = MAX; b > 0; b--) {
-		if (isPalindrome(a*b) && (a*b > max))
-			max = a*b;
-
-		if (b == a) {
+	for (a = MAX; a >= 100; a--) {
+		if (a % 11 == 0) {
 			b = MAX;
-			a--;
+			db = 1;
+		}
+		else {
+			b = MAX - MAX%11;
+			db = 11;
+		}
+		for (b = MAX; b >= a; b--) {
+			if (a*b <= largest)
+				break;
+
+			if (isPalindrome(a*b))
+				largest = a*b;
 		}
 	}
 
-	printf("%d\n", max);
+	printf("%d\n", largest);
 }
 
