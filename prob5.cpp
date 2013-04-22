@@ -1,8 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 int main(void) {
-	int num = 20, prod = 1;
+	int num = 20;
+	long prod = 1;
 	int i, j;
 	int factors[num-1];
 
@@ -21,5 +22,5 @@ int main(void) {
 		prod *= factors[i];
 	}
 
-	printf("%d\n", prod);
+	printf("%ld\n", prod);
 }

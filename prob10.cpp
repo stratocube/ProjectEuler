@@ -1,30 +1,31 @@
+#include <cstdio>
 #include <vector>
 #include <cmath>
-#include <stdio.h>
 
-int main(void) {
-
+int main(void)
+{
 	std::vector<int> primes;
 	primes.push_back(2);
 	primes.push_back(3);
 	primes.push_back(5);
 
-	int cnt = 3, i;
-	long num = 7;
+	int limit = 2000000;
+	int num = 7, i;
+	long sum = 0;
 	bool alt = true;
 
-	while (cnt < 10001) {
+	while (num < limit) {
+		//determine if num is prime
 		int root = floor(sqrt(num));
 
-		i = 2;
-		while (primes[i] <= root) {
+		//check against known primes
+		//num is not divisible by 2 or 3
+		for (i = 2; primes[i] <= root; i++) {
 			if (num % primes[i] == 0)
 				break;
-			i++;
 		}
 
 		if (primes[i] > root) {
-			cnt++;
 			primes.push_back(num);
 		}
 
@@ -36,5 +37,9 @@ int main(void) {
 		alt = !alt;
 	}
 
-	printf("%d\n", primes.back());
+	for (i = 0; i < primes.size(); i++) {
+		sum += primes[i];
+	}
+
+	printf("%ld\n", sum);
 }
