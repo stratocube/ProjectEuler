@@ -1,3 +1,4 @@
-a.out
-.*.swp
-!*.cpp
+.project
+.classpath
+.settings/
+bin/
