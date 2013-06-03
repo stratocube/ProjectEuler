@@ -1,4 +1,4 @@
-package euler;
+package projectEuler;
 
 import java.util.Calendar;
 

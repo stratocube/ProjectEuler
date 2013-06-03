@@ -1,4 +1,4 @@
-package euler;
+package projectEuler;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
