@@ -8,7 +8,7 @@ public class SieveOfEratosthenes {
 	private List<Boolean> sieve;
 	
 	public SieveOfEratosthenes(int limit) {
-		sieve = new ArrayList<Boolean>(limit+1);
+		sieve = new ArrayList<Boolean>();
 		for (int i = 0; i <= limit; i++) {
 			sieve.add(true);
 		}
