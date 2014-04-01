@@ -1,60 +1,64 @@
 package page2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import tools.*;
 
 public class Problem60 {
 
+	final static int MAX_PRIME = 10000;
 	final static int MAX_SIEVE = 10000000;
 	
 	public static void main(String[] args) {
 		SieveOfEratosthenes sieve = new SieveOfEratosthenes(MAX_SIEVE);
-		List<Integer> primeList = new ArrayList<Integer>();
-		int lastPrime = 1;
-		for (int i = 0; i < 3; i++) {
-			lastPrime = sieve.next(lastPrime);
-			primeList.add(lastPrime);
+		List<List<Integer>> primeLists = new ArrayList<List<Integer>>();
+		int prime, prime1, prime2;
+		
+		prime = 3;
+		while (prime < MAX_PRIME) {
+			primeLists.add(Arrays.asList(prime));
+			prime = sieve.next(prime);
 		}
-		lastPrime = sieve.next(lastPrime);
+//		for (List<Integer> list : primeLists) {
+//			System.out.print(list.toString() + ",");
+//		}
+//		System.out.println();
 		
-		CombinationDistinct combo = null;
-		List<Integer> sequence = null;
-		CombinationDistinct pairs;
-		List<Integer> trial;
-		
-		boolean solution = false;
-		while (!solution) {
-			primeList.add(lastPrime);
-			lastPrime = sieve.next(lastPrime);
-			combo = new CombinationDistinct(primeList, 4);
-			
-			newCombo:
-			while (combo.hasNext()) {
-				sequence = combo.next();
-				sequence.add(lastPrime);
-				//new ArrayList<Integer>(java.util.Arrays.asList(3,7,109))
-				pairs = new CombinationDistinct(sequence, 2);
+		for (int n = 0; n < 4; n++) {
+			List<List<Integer>> swapList = new ArrayList<List<Integer>>();
+			for (int i = 0; i < primeLists.size(); i++) {
+				List<Integer> primeList = primeLists.get(i);
 				
-				solution = true;
-				while (pairs.hasNext()) {
-					trial = pairs.next();
-					Long candidate1 = Long.parseLong(trial.get(0) + "" + trial.get(1));
-					Long candidate2 = Long.parseLong(trial.get(1) + "" + trial.get(0));
-					boolean test1 = candidate1 > MAX_SIEVE ? PrimeTest.isPrime(candidate1) : sieve.isPrime(candidate1.intValue());
-					boolean test2 = candidate2 > MAX_SIEVE ? PrimeTest.isPrime(candidate2) : sieve.isPrime(candidate2.intValue());
-					if (!test1 || !test2) {
-						solution = false;
-						continue newCombo;
+				prime1 = primeList.get(primeList.size()-1);
+				prime1 = sieve.next(prime1);
+				
+				anotherPrime:
+				while (prime1 < MAX_PRIME) {
+					for (int j = 0; j < primeList.size(); j++) {
+						prime2 = primeList.get(j);
+						
+						long candidate1 = Integer.parseInt(prime1 + "" + prime2);
+						long candidate2 = Integer.parseInt(prime2 + "" + prime1);
+						boolean test1 = candidate1 > MAX_SIEVE ? PrimeTest.isPrime(candidate1) : sieve.isPrime((int)candidate1);
+						boolean test2 = candidate2 > MAX_SIEVE ? PrimeTest.isPrime(candidate2) : sieve.isPrime((int)candidate2);
+						
+						if (!(test1 && test2)) {
+							prime1 = sieve.next(prime1);
+							continue anotherPrime;
+						}
 					}
+					List<Integer> copyList = new ArrayList<Integer>(primeList);
+					copyList.add(prime1);
+					swapList.add(copyList);
+					prime1 = sieve.next(prime1);
 				}
-				break;
 			}
+			primeLists = swapList;
 		}
 		
-		for (int i : sequence) {
-			System.out.print(i + " ");
+		for (List<Integer> list : primeLists) {
+			System.out.println(list.toString());
 		}
-		System.out.println();
 	}
 }

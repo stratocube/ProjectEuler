@@ -33,9 +33,9 @@ public class SieveOfEratosthenes {
 		int index = n;
 		do {
 			index++;
-			// if (index >= sieve.size()) {
-			// return 0;
-			// }
+			if (index >= sieve.size()) {
+				return -1;
+			}
 		} while (sieve.get(index) == false);
 		return index;
 	}
