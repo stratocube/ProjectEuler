@@ -1,7 +1,7 @@
 package page2;
 
-import java.util.ArrayList;
 import java.util.List;
+import tools.ContinuousFraction;
 
 public class Problem64 {
 
@@ -17,25 +17,13 @@ public class Problem64 {
 			}
 			
 			//Non-square value
-			int a0 = i-1;
-			int numerator = 1;
-			int denominator = a0;
-			int a;
+			digits = ContinuousFraction.squareRootCycle(n);
 			
-			digits = new ArrayList<Integer>();
-			do {
-				numerator = (n - denominator*denominator) / numerator;
-				a = (denominator + a0) / numerator;
-				denominator = a * numerator - denominator;
-				digits.add(a);
-				
-			} while ((numerator != 1) || (denominator != a0));
-			
-			if (digits.size() % 2 == 1) {
+			if (digits.size() % 2 == 0) {
 				count++;
 			}
-//			System.out.print("sqrt(" + n + ")=" + "[" + a0 + ";(");
-//			for (int d = 0; d < digits.size()-1; d++) {
+//			System.out.print("sqrt(" + n + ")=[" + digits.get(0) + ";(");
+//			for (int d = 1; d < digits.size()-1; d++) {
 //				System.out.print(digits.get(d) + ",");
 //			}
 //			System.out.println(digits.get(digits.size()-1) + ")]");
