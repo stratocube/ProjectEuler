@@ -1,13 +1,14 @@
 package page2;
 
+import java.rmi.NotBoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import tools.*;
+
+import tools.CombinationDistinct;
 
 public class Problem51 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NotBoundException {
 
 		// CombinationDistinct test = new
 		// CombinationDistinct(Arrays.asList(0,1,2,3),2);

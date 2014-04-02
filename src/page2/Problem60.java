@@ -1,16 +1,19 @@
 package page2;
 
+import java.rmi.NotBoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import tools.*;
+
+import tools.PrimeTest;
+import tools.SieveOfEratosthenes;
 
 public class Problem60 {
 
 	final static int MAX_PRIME = 10000;
 	final static int MAX_SIEVE = 10000000;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NotBoundException {
 		SieveOfEratosthenes sieve = new SieveOfEratosthenes(MAX_SIEVE);
 		List<List<Integer>> primeLists = new ArrayList<List<Integer>>();
 		int prime, prime1, prime2;
@@ -19,6 +22,7 @@ public class Problem60 {
 		while (prime < MAX_PRIME) {
 			primeLists.add(Arrays.asList(prime));
 			prime = sieve.next(prime);
+			
 		}
 //		for (List<Integer> list : primeLists) {
 //			System.out.print(list.toString() + ",");
