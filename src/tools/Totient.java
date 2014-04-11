@@ -1,10 +1,8 @@
 package tools;
 
-import java.rmi.NotBoundException;
-
 public class Totient {
 	
-	public static int getTotient(int number, SieveOfEratosthenes sieve) throws NotBoundException {
+	public static int getTotient(int number, SieveOfEratosthenes sieve) throws IndexOutOfBoundsException {
 		int sqrt = (int) Math.floor(Math.sqrt(number));
 		int prime = 2;
 		int totient = number, lastPrime = number;
@@ -18,7 +16,7 @@ public class Totient {
 			}
 			try {
 				prime = sieve.next(prime);
-			} catch (NotBoundException e) {
+			} catch (IndexOutOfBoundsException e) {
 				throw e;
 			}
 		}

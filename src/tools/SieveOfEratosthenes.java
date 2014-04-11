@@ -1,6 +1,5 @@
 package tools;
 
-import java.rmi.NotBoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,12 +29,12 @@ public class SieveOfEratosthenes {
 		return sieve.get(n);
 	}
 
-	public int next(int n) throws NotBoundException {
+	public int next(int n) throws IndexOutOfBoundsException {
 		int index = n;
 		do {
 			index++;
 			if (index >= sieve.size()) {
-				throw new NotBoundException();
+				throw new IndexOutOfBoundsException();
 			}
 		} while (sieve.get(index) == false);
 		return index;
