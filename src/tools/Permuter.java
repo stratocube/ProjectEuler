@@ -1,19 +1,20 @@
 package tools;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
 
-public class Permuter {
-	private List<?> original;
+public class Permuter<T> {
+	private List<T> original;
 	private Set<Integer> availableIndicies;
 	private Stack<Integer> indiciesStack;
 
-	public Permuter(List<?> list) {
-		original = new ArrayList<Object>(list);
+	public Permuter(List<T> list) {
+		Collections.copy(original, list);
 		indiciesStack = new Stack<Integer>();
 		availableIndicies = new TreeSet<Integer>();
 
@@ -22,7 +23,7 @@ public class Permuter {
 		}
 	}
 
-	public List<?> next() {
+	public List<T> next() {
 		while (!indiciesStack.isEmpty()) {
 			if (trySwapLargerAvailable()) {
 				break;
@@ -55,8 +56,8 @@ public class Permuter {
 	}
 
 	// Translates all indicies in the stack to objects in original list
-	private List<Object> permutationList() {
-		List<Object> list = new ArrayList<Object>();
+	private List<T> permutationList() {
+		List<T> list = new ArrayList<T>();
 		for (int i = 0; i < original.size(); i++) {
 			list.add(original.get(indiciesStack.get(i)));
 		}

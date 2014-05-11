@@ -12,7 +12,7 @@ public class Problem43 {
 			digits.add(i);
 		}
 
-		Permuter permuter = new Permuter(digits);
+		Permuter<Integer> permuter = new Permuter<Integer>(digits);
 		List<Integer> permutation = (List<Integer>) permuter.next();
 
 		long sum = 0;

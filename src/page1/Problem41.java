@@ -13,14 +13,14 @@ public class Problem41 {
 			digits.add(i);
 		}
 
-		Permuter permuter = new Permuter(digits);
+		Permuter<Integer> permuter = new Permuter<Integer>(digits);
 		permuter.next();
 		int candidate = 1;
 		List<Integer> permutation;
 
 		do {
 			StringBuilder sb = new StringBuilder();
-			permutation = (List<Integer>) permuter.next();
+			permutation = permuter.next();
 			for (Integer i : permutation) {
 				sb.append(i);
 			}
