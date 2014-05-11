@@ -14,7 +14,7 @@ public class Problem32 {
 			8, 9);
 
 	public static void main(String[] args) throws Exception {
-		Permuter2 permuter = new Permuter2(panDigits);
+		Permuter<Integer> permuter = new Permuter<Integer>(panDigits);
 		permuter.next();
 
 		List<Integer> perm = new ArrayList<Integer>();
@@ -23,7 +23,7 @@ public class Problem32 {
 		Set<BigInteger> products = new TreeSet<BigInteger>();
 
 		while (!perm.equals(panDigits)) {
-			perm = (List<Integer>) permuter.next();
+			perm = permuter.next();
 
 			for (int i = 1; i <= (panDigits.size() + 1) / 4; i++) {
 				segment = perm.subList(0, i);

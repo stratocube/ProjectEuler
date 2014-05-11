@@ -9,7 +9,7 @@ public class TestPermuter {
 			9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
 
 	public static void main(String[] args) {
-		Permuter permuter1 = new Permuter(list);
+		Permuter<Integer> permuter1 = new Permuter<Integer>(list);
 		Permuter2 permuter2 = new Permuter2(list);
 		long start, end;
 		long iterations = 1000000;
