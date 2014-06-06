@@ -1,4 +1,13 @@
-.project
+bin
+build
+
+*.swp
+
+.gradle
 .classpath
-.settings/
-bin/
+.project
+.settings
+.metadata
+
+.sonar
+sonar-project.properties
