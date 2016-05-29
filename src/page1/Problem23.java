@@ -42,7 +42,8 @@ public class Problem23 {
 		}
 		System.out.println("Sum of all non abundant sums: " + sumNonAbundant);
 		System.out.println("Sum of all abundant sums: " + sumAbundant);
-		System.out.println(LIMIT * (LIMIT + 1) / 2);
+		System.out.println("Sum of all numbers to LIMIT: " + (LIMIT * (LIMIT + 1) / 2));
+		System.out.println(sumNonAbundant);
 	}
 
 	public static boolean isAbundant(int num) {

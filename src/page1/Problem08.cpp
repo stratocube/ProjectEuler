@@ -25,12 +25,11 @@ std::string num =
 	"71636269561882670428252483600823257530420752963450";
 
 int main(void) {
-	
-	int prod = 0, max = 0;
-	for (int i = 0; i + 5 < num.length(); i++) {
+	long prod = 0, max = 0;
+	for (int i = 0; i + 13 < num.length(); i++) {
 		prod = 1;
 
-		for (int j = 0; j < 5; j++) {
+		for (int j = 0; j < 13; j++) {
 			prod *= num[i+j] - '0';
 		}
 
@@ -38,6 +37,6 @@ int main(void) {
 			max = prod;
 	}
 
-	printf("%d\n", max);
+	printf("%ld\n", max);
 }
 

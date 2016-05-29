@@ -60,6 +60,6 @@ int main(void)
 			divisors = numDivisors(n) * numDivisors((n+1)/2);
 	}
 
-	printf("%d - %ld: %d\n", n, (long)n*(n+1)/2, divisors);
+	printf("n:%d, t:%ld, d:%d\n", n, (long)n*(n+1)/2, divisors);
 }
 
