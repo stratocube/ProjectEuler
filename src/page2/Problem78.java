@@ -52,7 +52,7 @@ public class Problem78 {
 				break;
 			}
 			
-			if (-i % 2 == 0)
+			if (i % 2 == 0)
 				sum = sum.subtract(partitions(number-pentagonal));
 			else
 				sum = sum.add(partitions(number-pentagonal));

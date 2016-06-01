@@ -4,7 +4,7 @@ import java.rmi.NotBoundException;
 import java.util.Arrays;
 
 import tools.SieveOfEratosthenes;
-import tools.Signature;
+import tools.DigitCounts;
 import tools.Totient;
 
 public class Problem70 {
@@ -18,8 +18,8 @@ public class Problem70 {
 		for (int number = 2; number < 10000000; number++) {
 			int totient = Totient.getTotient(number, sieve);
 			
-			String s1 = Arrays.toString(Signature.digitCounts(number));
-			String s2 = Arrays.toString(Signature.digitCounts(totient));
+			String s1 = Arrays.toString(DigitCounts.digitCounts(number));
+			String s2 = Arrays.toString(DigitCounts.digitCounts(totient));
 			
 			if (s1.equals(s2)) {
 				ratio = (double) number / totient;

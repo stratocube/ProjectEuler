@@ -1,6 +1,6 @@
 package tools;
 
-public class Signature {
+public class DigitCounts {
 
 	public static int[] digitCounts(long n) {
 		int counts[] = new int[10];
