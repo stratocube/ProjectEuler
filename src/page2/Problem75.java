@@ -1,6 +1,6 @@
 package page2;
 
-import tools.Primality;
+import tools.Factorize;
 
 public class Problem75 {
 	public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class Problem75 {
 		
 		for (int f1 = 1; f1 <= sqrtL; f1 += 2) {
 			for (int f2 = 2; f2 <= sqrtL - f1; f2 += 2) {
-				if (Primality.gcd(f1, f2) == 1) {
+				if (Factorize.gcd(f1, f2) == 1) {
 					length = Math.abs(f2*f2 - f1*f1) + 2*f1*f2 + (f1*f1 + f2*f2);
 					for (int l = length; l < L; l += length) {
 						counts[l]++;

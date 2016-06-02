@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import tools.Primality;
+import tools.Factorize;
 import tools.SieveOfEratosthenes;
 
 public class Problem60 {
@@ -40,8 +40,8 @@ public class Problem60 {
 						
 						long candidate1 = Integer.parseInt(prime1 + "" + prime2);
 						long candidate2 = Integer.parseInt(prime2 + "" + prime1);
-						boolean test1 = candidate1 > MAX_SIEVE ? Primality.isPrime(candidate1) : sieve.isPrime((int)candidate1);
-						boolean test2 = candidate2 > MAX_SIEVE ? Primality.isPrime(candidate2) : sieve.isPrime((int)candidate2);
+						boolean test1 = candidate1 > MAX_SIEVE ? Factorize.isPrime(candidate1) : sieve.isPrime((int)candidate1);
+						boolean test2 = candidate2 > MAX_SIEVE ? Factorize.isPrime(candidate2) : sieve.isPrime((int)candidate2);
 						
 						if (!(test1 && test2)) {
 							prime1 = sieve.next(prime1);

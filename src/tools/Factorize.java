@@ -3,7 +3,7 @@ package tools;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Primality {
+public class Factorize {
 
 	public static boolean isPrime(long n) {
 		if (n <= 1) {
