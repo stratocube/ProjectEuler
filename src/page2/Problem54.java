@@ -12,7 +12,7 @@ public class Problem54 {
 	public static void main(String[] args) {
 		Scanner reader = null;
 		try {
-			reader = new Scanner(new File("resources/poker.txt"));
+			reader = new Scanner(new File("resources/p054_poker.txt"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.exit(1);

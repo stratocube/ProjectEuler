@@ -8,7 +8,7 @@ public class Problem42 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(
-				"resources/triangleWords.txt"));
+				"resources/p042_triangleWords.txt"));
 		String line = br.readLine();
 		br.close();
 

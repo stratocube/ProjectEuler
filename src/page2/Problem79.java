@@ -10,7 +10,7 @@ public class Problem79 {
 
 	public static void main(String[] args) throws Exception
 	{
-		BufferedReader br = new BufferedReader(new FileReader("resources/keylog.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("resources/p079_keylog.txt"));
 		String line = null;
 		Set<String> passwords = new HashSet<>();
 		while ((line = br.readLine()) != null) {

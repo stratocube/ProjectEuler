@@ -11,7 +11,7 @@ public class Problem67 {
 	public static void main(String[] args) {
 		Scanner reader = null;
 		try {
-			reader = new Scanner(new File("resources/triangle.txt"));
+			reader = new Scanner(new File("resources/p067_triangle.txt"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.exit(1);
