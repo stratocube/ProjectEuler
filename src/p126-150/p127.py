@@ -1,55 +1,43 @@
 from sympy import factorint
+from math import gcd
 
 N = 120000
 count = 0
 c_sum = 0
 
 factorizations = {}
-for c in range(1, N):
-    factorizations[c] = factorint(c)
+for num in range(1, N):
+    factorizations[num] = factorint(num)
 
-for c in range(2, N):
+rad = {}
+for num in range(1, N):
     prod = 1
-    for c_factor in factorizations[c]:
-        prod *= c_factor
-        if prod >= c:
-            break
+    for factor in factorizations[num]:
+        prod *= factor
+    rad[num] = prod
 
-    else:
-        for a in range(1, c//2):
-            prod_with_ab = prod
-            for a_factor in factorizations[a]:
-                prod_with_ab *= a_factor
-                if prod_with_ab >= c:
-                    break
+ordered_rad = {k: v for k, v in sorted(rad.items(), key=lambda x: x[1])}
 
-            else:
-                b = c - a
-                for b_factor in factorizations[b]:
-                    prod_with_ab *= b_factor
-                    if prod_with_ab >= c:
-                        break
+for b in range(1, N):
+    for a in ordered_rad:
+        # rad(a) < c / (rad(c)*rad(b)) < b / rad(b) b/c c < 2b
+        if ordered_rad[a] >= b // ordered_rad[b]:
+            break  # Nice trick!
 
-                else:
-                    # Checking GCDs is more time consuming than the product busting
-                    # especially for the larger numbers
-                    # We already have factorizations so instead of calculating gcd
-                    # test these for non-empty set intersection
-                    if any(x in factorizations[a].keys()
-                           for x in factorizations[b].keys()):
-                        continue
+        if a >= b:
+            continue
+        c = a + b
+        if c >= N:
+            continue
 
-                    # These are implied by gcd(a, c) = 1 and a + b = c
-                    # if any(x in factorizations[b].keys()
-                    #        for x in factorizations[c].keys()):
-                    #     continue
-                    # if any(x in factorizations[a].keys()
-                    #        for x in factorizations[b].keys()):
-                    #     continue
+        if rad[a]*rad[b]*rad[c] >= c:
+            continue
+        if gcd(a, b) != 1:
+            continue
 
-                    print(a, b, c)
-                    c_sum += c
-                    count += 1
+        print(a, b, c)
+        count += 1
+        c_sum += c
 
 print(count)
 print(c_sum)
