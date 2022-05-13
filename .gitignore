@@ -11,3 +11,4 @@ build
 
 .sonar
 sonar-project.properties
+*.pyc
