@@ -1,5 +1,4 @@
 from sympy import primerange
-from math import gcd
 import timeit
 
 factor_list = {2, 3, 5}
