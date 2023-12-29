@@ -3,7 +3,7 @@ package page2;
 import java.util.HashSet;
 import java.util.Set;
 
-import tools.SieveOfEratosthenes;
+import utils.SieveOfEratosthenes;
 
 public class Problem87 {
 

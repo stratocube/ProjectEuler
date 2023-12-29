@@ -2,8 +2,8 @@ package page2;
 
 import java.rmi.NotBoundException;
 
-import tools.SieveOfEratosthenes;
-import tools.Totient;
+import utils.SieveOfEratosthenes;
+import utils.Totient;
 
 public class Problem72 {
 

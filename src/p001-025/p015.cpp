@@ -3,7 +3,7 @@
 int main(void)
 {
 	const int SIZE = 20;
-	long paths[SIZE+1][SIZE+1];
+	long long paths[SIZE+1][SIZE+1];
 
 	for (int i = 0; i <= SIZE; i++) {
 		paths[i][0] = 1;
@@ -16,5 +16,5 @@ int main(void)
 		paths[i][i] = 2*paths[i][i-1];
 	}
 
-	printf("%ld\n", paths[SIZE][SIZE]);
+	printf("%lld\n", paths[SIZE][SIZE]);
 }

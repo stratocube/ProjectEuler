@@ -3,9 +3,9 @@ package page2;
 import java.rmi.NotBoundException;
 import java.util.Arrays;
 
-import tools.SieveOfEratosthenes;
-import tools.DigitCounts;
-import tools.Totient;
+import utils.SieveOfEratosthenes;
+import utils.DigitCounts;
+import utils.Totient;
 
 public class Problem70 {
 

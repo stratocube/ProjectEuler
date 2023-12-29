@@ -9,7 +9,7 @@ import java.util.List;
 public class Problem22 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(
-				"resources/p022_names.txt"));
+				"../../resources/p022_names.txt"));
 		String line = br.readLine();
 		List<String> names = Arrays
 				.asList(line.replaceAll("\"", "").split(","));

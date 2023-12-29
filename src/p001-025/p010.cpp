@@ -11,7 +11,7 @@ int main(void)
 
 	int limit = 2000000;
 	int num = 7, i;
-	long sum = 0;
+	long long sum = 0;
 	bool alt = true;
 
 	while (num < limit) {
@@ -41,5 +41,5 @@ int main(void)
 		sum += primes[i];
 	}
 
-	printf("%ld\n", sum);
+	printf("%lld\n", sum);
 }

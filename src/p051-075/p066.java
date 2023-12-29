@@ -3,7 +3,7 @@ package page2;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
-import tools.ContinuousFraction;
+import utils.ContinuousFraction;
 
 public class Problem66 {
 

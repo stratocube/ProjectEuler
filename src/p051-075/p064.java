@@ -1,7 +1,7 @@
 package page2;
 
 import java.util.List;
-import tools.ContinuousFraction;
+import utils.ContinuousFraction;
 
 public class Problem64 {
 

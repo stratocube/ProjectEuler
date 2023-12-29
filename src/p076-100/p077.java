@@ -1,6 +1,6 @@
 package page2;
 
-import tools.SieveOfEratosthenes;
+import utils.SieveOfEratosthenes;
 
 public class Problem77 {
 

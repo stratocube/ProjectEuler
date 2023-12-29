@@ -1,11 +1,15 @@
 #include <cstdio>
 #include <vector>
 
-long collatz(long n) {
-	static std::vector<int> discovered(1000000, 0);
-	int links;
+long collatz(long long n) {
+	static std::vector<long> discovered(1000000);
+	long links;
 
-	if (n <= 1)
+	if (n < 1) {
+		printf("error\n");
+		return 0;
+	}
+	if (n == 1)
 		return 1;
 
 	//lookup table
@@ -13,9 +17,9 @@ long collatz(long n) {
 		return discovered.at(n);
 
 	if (n % 2 == 0)
-		links = 1 + collatz(n/2);
+		links = collatz(n/2) + 1;
 	else
-		links = 1 + collatz(3*n+1);
+		links = collatz(3*n+1) + 1;
 
 	if (n < discovered.size())
 		discovered.at(n) = links;
@@ -25,15 +29,17 @@ long collatz(long n) {
 
 int main(void)
 {
-	int max = 0, longest = 0;
-	for (int i = 1; i < 1000000; i++) {
-		int terms = collatz(i);
+	long max = 0;
+	long long longest = 0;
+	for (long long i = 1; i < 1000000; i++) {
+		long terms = collatz(i);
 		if (terms > max) {
 			max = terms;
 			longest = i;
 		}
 	}
 
-	printf("%d: %d\n", longest, max);
+	printf("%lld: %ld\n", longest, max);
+	
 }
 

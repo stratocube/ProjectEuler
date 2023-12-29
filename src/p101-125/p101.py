@@ -10,7 +10,7 @@ def poly2(x):
 
 def poly(x):
     sum = 0
-    for exp in range(11):
+    for exp in range(10+1):
         sum += (-x)**exp
     return sum
 

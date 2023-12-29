@@ -2,7 +2,7 @@
 #include <cmath>
 
 //long p = 13195;
-long p = 600851475143;
+long long p = 600851475143;
 
 void divideOut(int n) {
 	while (p % n == 0) {

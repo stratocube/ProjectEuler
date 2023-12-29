@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import tools.Factorize;
-import tools.SieveOfEratosthenes;
+import utils.Factorize;
+import utils.SieveOfEratosthenes;
 
 public class Problem60 {
 

@@ -18,7 +18,7 @@ public class Problem59 {
 		
 		Scanner reader = null;
 		try {
-			reader = new Scanner(new File("resources/p059_cipher1.txt"));
+			reader = new Scanner(new File("../../resources/p059_cipher1.txt"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

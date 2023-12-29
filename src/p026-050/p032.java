@@ -1,4 +1,3 @@
-package page1;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -7,9 +6,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import tools.Permuter;
+import utils.Permuter;
 
-public class Problem32 {
+public class p032 {
 
 	static final List<Integer> panDigits = Arrays.asList(1, 2, 3, 4, 5, 6, 7,
 			8, 9);

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import tools.CombinationDistinct;
+import utils.CombinationDistinct;
 
 public class Problem51 {
 
 	public static void main(String[] args) throws IndexOutOfBoundsException
 	{
 		int limitDigits = 8;
-		tools.SieveOfEratosthenes sieve = new tools.SieveOfEratosthenes(1000000);
+		utils.SieveOfEratosthenes sieve = new utils.SieveOfEratosthenes(1000000);
 		int numPrimeReplacements = 0;
 		int numDigits = 0;
 		Integer mysteryNum = 0;

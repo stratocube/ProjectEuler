@@ -1,5 +1,5 @@
 def can_partition(num, max_val):
-    if num < max_val:
+    if num < max_val or max_val <= 0:
         return False
     if num == max_val:
         return True
@@ -21,17 +21,15 @@ def can_partition(num, max_val):
     return False
 
 
-i = 2
+i = 4
 S_sum = 0
 while True:
     square = i*i
     if square > 10**12:
         break
 
-    if i % 10000 == 0:
-        print(i, square)
-
     if can_partition(square, i):
+        print(square)
         S_sum += square
 
     i += 1

@@ -39,8 +39,9 @@ int main(void)
 			printf("%02d, ", numbers[i][j]);
 		printf("\n");
 	}
-
-	for (int i = 0; i <= 20; i++) {
+	
+	prod = 1;
+	for (int i = 0; i < 20; i++) {
 		for (int j = 0; j <= 16; j++) {
 			prod = 1;
 			for (int k = 0; k < 4; k++) {
@@ -52,7 +53,7 @@ int main(void)
 	}
 
 	for (int i = 0; i <= 16; i++) {
-		for (int j = 0; j <= 20; j++) {
+		for (int j = 0; j < 20; j++) {
 			prod = 1;
 			for (int k = 0; k < 4; k++) {
 				prod *= numbers[i+k][j];

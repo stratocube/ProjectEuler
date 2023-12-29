@@ -16,7 +16,7 @@ public class Problem83 {
 	
 	public static void main(String[] args) throws Exception
 	{
-		BufferedReader br = new BufferedReader(new FileReader("resources/p083_matrix.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("../../resources/p083_matrix.txt"));
 		String line;
 		
 		int i = 0, j = 0;

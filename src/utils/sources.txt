@@ -1,0 +1,10 @@
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\CombinationDistinct.java
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\CombinationRepetitions.java
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\ContinuousFraction.java
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\DigitCounts.java
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\Factorize.java
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\Permuter.java
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\Permuter2.java
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\SieveOfEratosthenes.java
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\TestPermuter.java
+C:\Users\nickb\IdeaProjects\ProjectEuler\src\utils\Totient.java

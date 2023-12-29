@@ -1,6 +1,6 @@
 package page2;
 
-import tools.Factorize;
+import utils.Factorize;
 
 public class Problem75 {
 	public static void main(String[] args) {
