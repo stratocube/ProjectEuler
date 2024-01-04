@@ -1,6 +1,7 @@
 from math import isqrt
 import timeit
 
+
 def calculate():
     limit = 100_000_000
     m_limit = isqrt(limit // 2)
@@ -24,7 +25,7 @@ def calculate():
 
                 if h % abs(s1 - s2) == 0:
                     if f'{s1},{s2},{h}' in discovered or \
-                        f'{s2},{s1},{h}' in discovered:
+                            f'{s2},{s1},{h}' in discovered:
                         pass
                     else:
                         discovered.add(f'{s1},{s2},{h}')
